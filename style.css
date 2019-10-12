@@ -1,0 +1,13 @@
+.board {
+    border: 5px solid black;
+    margin: 175px 600px;
+    height: 550px;
+}
+.board div{
+    float: left;
+    width: 221.5px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    height: 180px;
+}
