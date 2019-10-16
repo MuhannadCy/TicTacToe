@@ -5,4 +5,4 @@
  
  ##The Game
   
-    ![Screenshot](/Screenshot_95)
+    ![Screenshot](/Screenshot_95.png)
