@@ -5,4 +5,4 @@
  
  ##The Game
   
-    ![Screenshot](file:///C:/Users/User/Desktop/TicTacToe/Screenshot_93.png)
+    ![Screenshot](https://user-images.githubusercontent.com/55264907/66966495-057ef100-f086-11e9-8459-2c5601146e36.png)
