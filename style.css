@@ -1,21 +1,84 @@
 .board {
-    border: 5px solid red;
-    margin: 0px 600px;
-    height: 550px;
+    float: center;
+    margin: 0% 25%;
+    height: 650px;
+    width: 50%;
+}
+.rightbar{
+    float: right;
+    width: 25%;
+    border: 1px solid black;
+    height: 645px; 
+}
+.rightbar img{
+    width: 100%;
+    height: 100%
+}
+.leftbar{
+    display: inline-block;
+    float: left;
+    width: 25%;
+    border: 1px solid black;
+    height: 645px; 
+}
+footer{
+    border: 3px solid black;
+    text-align: center;
+    font: bolder;
+}
+header{
+    text-align: center;
+    height: 100px;
+    border: 3px solid black;
+}
+.scores{
+    margin: 0% 30% 0% 10%;
+    width: 100%;
+}
+#tie{
+    padding-right: 5%;
+}
+#wins{
+    padding-left: 8%;
+}
+#ties{
+    padding-right: 8%;
+}
+#win{
+    padding-left: 2%;
+}
+.score-words{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.score-number{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.current-image{
+    padding-left: 150px;
+    margin-top: -50px;
+
+}
+.zone{
+    border: 2px solid black
 }
 .board div{
     float: left;
-    width: 32.74%;
+    width: 32.79%;
     /* width: 221.5px; */
-    border: 2px solid black;
-    height: 180px;
+    height: 32.740%;
 }
+
 .score-board{
+    display: flex;
+    border: 2px solid black;    
     padding: 20px 0px 0px 50px;
 }
 .score-board h3{
-    height: 100px;
-    position: relative;
+    margin-bottom: -10px;
 }
 .score-board img{
     height: 150px;
@@ -24,4 +87,24 @@
 .board img{
     width: 100%;
     height: 100%;
+}
+.button-1{
+    text-align: center;
+}
+.button-2{
+    text-align: center;
+}
+.select-button{
+    text-align: center;
+}
+p{
+    padding-top: 10%;
+    font-size: 120%;
+}
+.leftbar h2{
+    text-align: center;
+}
+#lore{
+    padding-top: 0%;
+    font-size: 130%;
 }

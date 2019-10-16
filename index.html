@@ -10,43 +10,86 @@
 <body>
     <div class="main">
         <header>
-            <h1>Welcome</h1>
+            <h1>Tic Tac Toe</h1>
         </header>
         <div class="score-board">
-            <h3>Current Turn: <img class="current-image"></h3>
-            <!-- <div><img class="current-image"></div> -->
+                <div class="current-turn">
+                <h3>Current Turn: </h3>
+                <div><img class="current-image"></div>
+            </div>
+            <div class="scores">
+                <div class="score-words">
+                    <h1 id="win">O Wins</h1>
+                    <h1 id="lose">X Wins</h1>
+                    <h1 id="tie">Ties</h1>
+                </div>
+                <div class="score-number">
+                 <h1 id="wins">0</h1>
+                 <h1 id="loses">0</h1>
+                 <h1 id="ties">0</h1>
+                </div>
+                </div>
+            </div>
             
         </div>
+        <div class="leftbar">
+            <p>If you wish to change the Game Mode </p>
+            <div class="button-2">
+                <button>Play vs AI</button>
+            </div>
+            <p>If you wish to pick a theme: </p>
+            <div class="select-button">
+                <select class="theme-option">
+                    <option value="default">Default</option>
+                    <option value="Avengers">Avengers</option>
+                    <option value="Star Wars">Star Wars</option>
+                    <option value="Batman">Batman</option>
+                    <option value="Spiderman">Spider Man</option>
+                </select>
+            </div>
+            <h2>lore</h2>
+            <p id="lore">This is the default theme. Therefore, it has no lore just pretty the secret of the universe which is: Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur provident dolores ullam similique cum soluta aliquam necessitatibus natus? Sunt dignissimos nulla dolorum rem ut dolores! Repudiandae aspernatur expedita minus?</p>
+        </div>    
+        <div class="rightbar">
+            <img>
+            </div>
         <div class="board">
-            <div class="zone-0">
+            <div class="zone" id="zone-0">
                 <img>
             </div>
-            <div class="zone-1">
+            <div class="zone" id="zone-1">
                 <img>
             </div>
-            <div class="zone-2">
+            <div class="zone" id="zone-2">
                 <img>
             </div>
-            <div class="zone-3">
+            <div class="zone" id="zone-3">
                 <img>
             </div>
-            <div class="zone-4">
+            <div class="zone" id="zone-4">
                 <img>
             </div>
-            <div class="zone-5">
+            <div class="zone" id="zone-5">
                 <img>
             </div>
-            <div class="zone-6">
+            <div class="zone" id="zone-6">
                 <img>
             </div>
-            <div class="zone-7">
+            <div class="zone" id="zone-7">
                 <img>
             </div>
-            <div class="zone-8">
+            <div class="zone" id="zone-8">
                 <img>
             </div>
+        </div>
+
+        <div class="button-1">
+            <button >New Game</button>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
+<footer>
+    <h4>Made with Innovation and Creativity By: Muhannad Alanazi</h4>
+</footer>
 </html>
