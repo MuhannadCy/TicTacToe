@@ -5,4 +5,4 @@
  
  ##The Game
   
-    ![Screenshot](Screenshot_93.png)
+    ![Screenshot](file:///C:/Users/User/Desktop/TicTacToe/Screenshot_93.png)
