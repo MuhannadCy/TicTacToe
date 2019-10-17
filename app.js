@@ -1,7 +1,7 @@
-let currentTurn =  false;
-let gameMode = false;
-
-let counter = 0;
+//Initilizing and assigning variables
+let currentTurn =  false; 
+let gameMode = false;   
+let counter = 0;        
 let tieCounter = 0;
 let xCounter = 0;
 let oCounter = 0;
@@ -39,6 +39,7 @@ let zone = document.querySelectorAll(".zone img");
 body.style.backgroundImage = "url('background.png')"
 body.style.backgroundRepeat = "no-repeat"
 body.style.backgroundSize="cover"
+//initilizing a two dimensional array with all the winning conditions
 let boardArr = [
     [zone0, zone1, zone2],
     [zone3, zone4, zone5],
@@ -49,7 +50,7 @@ let boardArr = [
     [zone0, zone4, zone8],
     [zone2, zone4, zone6]
 ];
-let boardAI = [];
+//initilizing game start function for player vs player mode 
 const gameStartPVP = function(){
     currentTurn =  false;
     counter = 0;
@@ -69,6 +70,7 @@ const gameStartPVP = function(){
     gif.setAttribute('src', '')
 
 }
+//initilizing game start function for player vs AI mode
 const gameStartAI = function(){
     counter = 0;
     displayTurn()
@@ -87,6 +89,7 @@ const gameStartAI = function(){
     gif.setAttribute('src', '')
 
 }
+//initilizing a function for when O wins
 const endGameO = function(){
     for(let i = 0; i<zone.length; i++){
         zone[i].removeEventListener('click', play);
@@ -99,6 +102,7 @@ const endGameO = function(){
     winAudio.play()
     alert(winAlert)
 }
+//initilizing a function for when X wins 
 const endGameX = function(){
     for(let i = 0; i<zone.length; i++){
         zone[i].removeEventListener('click', play);
@@ -111,11 +115,13 @@ const endGameX = function(){
     loseAudio.play()
     alert(loseAlert)
 }
+//initilizing a function for when there is a Tie
 const endGameTie = function(){
     tieCounter++;
     ties.textContent= tieCounter;
     alert("The Game is a Tie")
 }
+//initilizing a function to check the winner by looping through the winning conditions array
 const checkWinner = function(){
     for(let i = 0; i<boardArr.length; i++){
         if(boardArr[i][0].getAttribute('src') == x && boardArr[i][1].getAttribute('src') == x &&boardArr[i][2].getAttribute('src') == x) return endGameX()
@@ -123,17 +129,20 @@ const checkWinner = function(){
     }
     if(counter == 9)  return endGameTie()
 }
+//initilizing a function to display the current turn if player vs player mode
 const displayTurn = function(){
-    if(currentTurn == true){
+    if(currentTurn == false){
         currentImage.setAttribute('src', x);
     }
     else{
         currentImage.setAttribute('src', o);
     }
 }
+//initilizing a function to display the current turn if player vs AI mode
 const displayTurnAI = function(){
     currentImage.setAttribute('src', x)
 }
+//initilizing a function to reset all the scores
 const scoreReset = function(){
     oCounter = 0;
     xCounter = 0;
@@ -142,10 +151,10 @@ const scoreReset = function(){
     loses.textContent= xCounter;
     ties.textContent = tieCounter
 }
+//a function to randomly pick a clear point on the game board
 const AI = function(){
     for(let i = 0; i<3; i++){
         for(let j = 0; i<3; i++){
-
         }
     }
     firstD = Math.floor(Math.random() * 3);
@@ -153,8 +162,9 @@ const AI = function(){
     if(boardArr[firstD][secondD].getAttribute('src') != "") return AI()
     else return boardArr[firstD][secondD]
 }
+//initlizing a play function for player vs AI mode
 const playAI = function(){
-    displayTurn()
+    displayTurnAI()
     this.setAttribute('src', x)
     counter++;
     if(counter == 9) return endGameTie()
@@ -167,10 +177,8 @@ const playAI = function(){
         checkWinner()
     }
 }
+//initilizing a function for player vs player mode
 const play = function(){
-    displayTurn();
-    currentTurn = !currentTurn;
-    displayTurn();
     if(currentTurn == false){
         this.setAttribute('src', x);
     }
@@ -182,10 +190,15 @@ const play = function(){
         checkWinner()
     }
     this.removeEventListener('click', play);
+    currentTurn = !currentTurn;
+    displayTurn()
 }
+//initlizing a function to change the theme based on the user's choice
 const changeTheme = function(){
     if(themeOption.value == 'Avengers'){
+        //reseting the game because the theme has been changed
         setGameMode()
+        //Implementing changes to the page to fit the chosen theme
         lore.innerText = "Yes the avengers time heist worked and they finally managed to reverse the effect of the infinity stones, but Thanos found out about their plan and chased them to their timeline. The avengers have to defend the stones from Thanos's army and return the stones to their original timeline. Right now Iron man is trying to steal the stone's from Thanos's gauntlet. Will he successed ?"
         body.style.backgroundImage = "url('ThanosvsIronman.png')"
         body.style.backgroundRepeat = "no-repeat"
@@ -201,6 +214,12 @@ const changeTheme = function(){
         loseAlert = "Iron Man Has Won and Wiped Thanos's Army"
         winAud = "ThanosAudio.mp3"
         loseAud = "Ironman.mp4"
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
         scoreReset()
     }
     if(themeOption.value == 'Star Wars'){
@@ -220,9 +239,16 @@ const changeTheme = function(){
         loseAlert = "The Dark Side Has Won"
         winAud = "Obi.mp3"
         loseAud = "Anakin.mp3"
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
         scoreReset()
     }
     if(themeOption.value == 'Batman'){
+        setGameMode()
         lore.innerText = "Bane has thrown batman into the hole and taken control over Gotham City, but batman managed to escape from the hole and has come to rescue from Bane. Bane has planted a bomb and he alone holds the deactivation trigger for it. Will Batman manage to defeat Bane and retrieve the trigger to save Gotham ?"
         body.style.backgroundImage = "url('batmanb.jpg')"
         body.style.backgroundRepeat = "no-repeat"
@@ -238,6 +264,12 @@ const changeTheme = function(){
         loseAlert = "Bane Has Won"
         winAud = "Batman.mp4"
         loseAud = "Bane.mp4"
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
         scoreReset()
     }
     if(themeOption.value == 'default'){
@@ -257,6 +289,12 @@ const changeTheme = function(){
         loseAlert = "X IS THE CHAMPION"
         winAud = ""
         loseAud = ""
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
         scoreReset()
     }
     if(themeOption.value == 'Spiderman'){
@@ -276,13 +314,20 @@ const changeTheme = function(){
         loseAlert = "Mysterio Has Won and MJ Dumbed Peter"
         winAud = "Spiderman.mp4"
         loseAud = "Mysteryo.mp4"
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
         scoreReset()
     }
 }
+//setting an attribute for select and assigning to a function
 themeOption.setAttribute('onchange', 'changeTheme()')
+//initilizing a function that set the game mode based on a boolean value
 const setGameMode = function(){
     if(gameMode == false){
-        console.log("Hello")
         displayTurn()
         return gameStartPVP()
     }
@@ -291,6 +336,7 @@ const setGameMode = function(){
         return gameStartAI()
     }
 }
+//setting a listener to change the game mode boolean based on the click 
 gameModeButton.addEventListener('click', function(){
     gameMode = !gameMode
     scoreReset()
@@ -302,5 +348,7 @@ gameModeButton.addEventListener('click', function(){
         gameModeButton.textContent = "Player vs Player"
     }
 })
+//setting the default mode and initilizng the game when the page is opened or reloaded 
 setGameMode();
+//setting a listener to start a new game when it's clicked
 newGame.addEventListener('click', setGameMode)
