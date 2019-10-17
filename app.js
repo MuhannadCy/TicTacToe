@@ -367,7 +367,7 @@ gameModeButton.addEventListener('click', function(){
     scoreReset()
     setGameMode()
     if(gameMode == false){
-        gameModeButton.textContent = "Player vs AI"
+        gameModeButton.textContent = "Player vs AR"
     }
     else{
         gameModeButton.textContent = "Player vs Player"
