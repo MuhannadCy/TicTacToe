@@ -222,6 +222,31 @@ const changeTheme = function(){
         }
         scoreReset()
     }
+    if(themeOption.value == 'Death Note'){
+        setGameMode()
+        lore.innerText = "Yagami Light got his hands on a death note which allows him to kill anyone if he knows what they look like and their name. He is using the death note to bring his own justice to the world. But, is that really justice. L, the world's greatest detective think its not and aims to stop Yagami. Who will win in this battle Yagami's justice or L's ?"
+        body.style.backgroundImage = "url('Ryuk.jpg')"
+        body.style.backgroundRepeat = "no-repeat"
+        body.style.backgroundSize="cover"
+        body.style.color='white'
+        x = 'K.jpg'
+        o = 'L.jpg'
+        oGif = 'L.gif'
+        xGif = 'K.gif'
+        loseText.innerText = "K"
+        winText.innerText = "L"
+        winAlert = "L has discovered that Yagami is Kera and brought him to justice"
+        loseAlert = "Yagami has managed to find L's name and managed to write his name in the death note"
+        winAud = "L.mp3"
+        loseAud = "L.mp3"
+        if(gameMode == false){
+            displayTurn()
+        }
+        else{
+            displayTurnAI()
+        }
+        scoreReset()
+    }
     if(themeOption.value == 'Star Wars'){
         setGameMode()
         lore.innerText = "Anakin Skywalker has been tempted by the dark side and has joined the Darth Sidious and managed to kill the Jedi except for Anakin's mentor Obi Wan Kenobi and Yoda a legendary Jedi Master. Obi Wan tried to bring Anakin back but he was too deep into the dark side. A fight broke between the two on planet Mustafar, who will win ? the dark side or the force"
