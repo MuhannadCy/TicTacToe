@@ -1,10 +1,11 @@
-#Tic Tac Toe
+# Tic Tac Toe
 
-##Intorduction:
+## Intorduction:
 
   This is a Tic Tac Toe game created with HTML, CSS, and Javascript. The HTML is used to create the structure of the page, the CSS is used to add styles to that structure, and Javascript is used for the logic of the game. 
  
- ##The Game
+ ## The Game:
+ 
   This game contain several themes and each theme has it's own cross and circle toeken and a lore. The default theme is very standard and regular. You can see it in the screenshot below. 
 ![Screenshot_95](https://user-images.githubusercontent.com/55264907/66966624-8e962800-f086-11e9-8ecd-617d6844166b.png)
 
@@ -19,5 +20,6 @@ A last addition to the game is the AI which is set on a super easy deficulty whe
 
 You can test that and see for yourself all the special gifs, messages, and audio. Just click the link https://muhannadcy.github.io/TicTacToe/
 
-##Technical Details
+## Technical Details:
+
   For those who're interested in technical details the code contains many comments that can explain the functionality of it. 
